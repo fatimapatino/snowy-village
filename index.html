@@ -4,17 +4,17 @@
   body {
     background-color: #002072;
     color: #ffffff;
-    font-size: 30px;
-    line-height: 30px;
-    word-wrap: anywhere;
+ font-size: 20px; 
+ line-height: 30px; 
     font-family: "Noto Serif SC";
   }
   
   .clouds {
-    position: relative;
-    width: 100%;
-    height: 30%;
-    margin: auto;
+  position: relative; 
+     width: 100%; 
+     height: 30%;
+    margin: auto; 
+    font-family: monospace; 
   }
   .snow {
     position: relative;
@@ -31,7 +31,7 @@
 </style>
 
 <body>
-  <section class="clouds">
+  <pre class="clouds">
         _                                  
               (`  ).                   _           
              (     ).              .:(`  )`.       
@@ -44,9 +44,9 @@
 .-'  (_.'          .')                    `(    )  ))
                   (_  )                     ` __.:'   
   
-  </section>
+  </pre>
   <section class="snow"></section>
-  <section class="houses">
+  <pre class="houses">
                                ~~~~
                             ~~
                           _||____
@@ -55,19 +55,20 @@
 //\\/\\/\\     __/  \_  |__|_|_|__|   \__,
  || || ||     '-o---o-' |  |/|\| /|   /\ \
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-  </section>
+  </pre>
 </body>
 
 <script>
+  let snow = document.querySelector('.snow')
   
   function draw () {
     const fps = 1000
     setTimeout(draw, fps)
     
     if (Math.random() > 0.5) {
-      document.body.innerText += '*'
+      snow.innerText += '*'
     } else {
-      document.body.innerText += '.'
+      snow.innerText += '.'
     }
     
     window.scrollTo(0, 0)
